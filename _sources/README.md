@@ -1,4 +1,6 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/NyLY6Lqa)
+# hw04-Group18
+
+In this assignment, we add more structure, tests, and documentation to improve the structure of our repository as a Reproducible Research Package, using the code from the LIGO Gravitational Wave Detection Tutorial.
 
 https://ucb-stat-159-s23.github.io/hw04-Group18/LOSC_Event_tutorial.html
 
