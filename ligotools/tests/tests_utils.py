@@ -3,7 +3,6 @@ import pytest
 import numpy as np
 from scipy.interpolate import interp1d
 from scipy.signal import butter
-import os.path
 
 strain_H1, time_H1, chan_dict_H1 = rl.loaddata('data/H-H1_LOSC_4_V2-1126259446-32.hdf5', 'H1')
 strain_L1, time_L1, chan_dict_L1 = rl.loaddata('data/H-L1_LOSC_4_V2-1126259446-32.hdf5', 'L1')
