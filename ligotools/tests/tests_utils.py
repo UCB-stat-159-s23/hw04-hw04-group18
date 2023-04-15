@@ -11,7 +11,7 @@ fs = 4096
 NFFT = 4 * fs
 Pxx_H1, freqs = mlab.psd(strain_H1, Fs = fs, NFFT = NFFT)
 psd_H1 = interp1d(freqs, Pxx_H1)
-dt = time_h1[1] - time_h1[0]
+dt = time_H1[1] - time_H1[0]
 
 fband = [43.0, 300.0]
 bb, ab = butter(4, [fband[0] * 2./fs, fband[1] * 2./fs], btype = 'band')
