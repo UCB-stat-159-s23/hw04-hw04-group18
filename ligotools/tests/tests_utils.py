@@ -19,7 +19,7 @@ normalization = np.sqrt((fband[1]-fband[0])/(fs/2))
 strain_H1_whitenbp = filtfilt(bb, ab, utils.whiten(strain_H1, psd_H1, dt)) / normalization
 filename = 'GW150914'+'_H1_whitenbp.wav'
 det = 'H1'
-plottype = 'png'
+plottype = 'pdf'
 pcolor = 'r'
 
 def test_whiten():
