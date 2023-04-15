@@ -17,6 +17,7 @@ fband = [43.0, 300.0]
 bb, ab = butter(4, [fband[0] * 2./fs, fband[1] * 2./fs], btype = 'band')
 normalization = np.sqrt((fband[1]-fband[0])/(fs/2))
 strain_H1_whitenbp = filtfilt(bb, ab, utils.whiten(strain_H1, psd_H1, dt)) / normalization
+
 filename = 'GW150914'+'_H1_whitenbp.wav'
 det = 'H1'
 plottype = 'pdf'
