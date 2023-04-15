@@ -1,8 +1,9 @@
+from ligotools import readligo as rl
 from ligotools import utils
 import pytest
 import numpy as np
 from scipy.interpolate import interp1d
-from scipy.signal import butter
+from scipy.signal import butter, filtfilt
 
 strain_H1, time_H1, chan_dict_H1 = rl.loaddata('data/H-H1_LOSC_4_V2-1126259446-32.hdf5', 'H1')
 
@@ -12,11 +13,10 @@ Pxx_H1, freqs = mlab.psd(strain_H1, Fs = fs, NFFT = NFFT)
 psd_H1 = interp1d(freqs, Pxx_H1)
 dt = time_h1[1] - time_h1[0]
 
-strain_H1_whiten = whiten(strain_H1, psd_H1, dt)
 fband = [43.0, 300.0]
 bb, ab = butter(4, [fband[0] * 2./fs, fband[1] * 2./fs], btype = 'band')
 normalization = np.sqrt((fband[1]-fband[0])/(fs/2))
-strain_H1_whitenbp = filtfilt(bb, ab, strain_H1_whiten) / normalization
+strain_H1_whitenbp = filtfilt(bb, ab, utils.whiten(strain_H1, psd_H1, dt)) / normalization
 filename = 'GW150914'+"_H1_whitenbp.wav"
 det = 'H1'
 plottype = 'png'
