@@ -6,3 +6,6 @@ Created JupyterBook and Binder link, set up continuous integration
 
 Ye Joon Han (25%):
 Added tests to utils.py and created the Makefile with targets including 'env', 'html' and 'clean'
+
+Yingyi Huang (25%):
+Create `utils.py` and Make new plotting utility in `utils.py` 
